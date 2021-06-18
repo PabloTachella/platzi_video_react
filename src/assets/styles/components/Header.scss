@@ -1,0 +1,46 @@
+.header {  
+    align-items: center;
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    padding: 0px 30px;
+}
+.header__img {
+    width: 200px;
+}
+
+/* Menu desplegable */
+.header__menu ul{
+    display: none; /*Vuelve al elemento no visible sin removerlo del dom*/
+    list-style: none; /*elimina los puntos de item*/
+    margin: 0 0 0 -11px;
+    padding: 0px;
+    position: absolute;
+    text-align: right;
+    width: 100px;
+}
+.header__menu:hover ul {
+    display: block;
+}
+.header__menu li {
+    margin: 10px 0px;
+}
+.header__menu li a {
+    color: white;
+    text-decoration: none;
+}
+.header__menu li a:hover {
+    text-decoration: underline;
+}
+.header__menu--profile {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.header__menu--profile img {
+    margin-right: 10px;
+    width: 40px;
+}
+.header__menu--profile p {
+    margin: 0px;
+}
