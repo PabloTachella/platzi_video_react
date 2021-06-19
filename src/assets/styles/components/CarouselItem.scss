@@ -1,0 +1,59 @@
+.carousel-item {
+    border-radius: 20px;
+    cursor: pointer; /*cambia la apariencia del cursor al hacer hover sobre este elemento*/
+    display: inline-block; /*alinea horizontalmente*/
+    height: 250px;
+    margin-right: 10px;
+    overflow: hidden; /*para que la imagen ocupe todo el item respetando el border-radius*/
+    transform-origin: center left; /*que la animacion sea centrada y comience de izquierda a derecha*/
+    transition: 450ms all; /*para que la animacion quede mas fluida*/
+    width: 200px;
+}
+.carousel-item:hover ~ .carousel-item { /* ~ selecciona el item que este inmediatamente despues
+ y todos los siguientes*/
+    transform: translate3d(100px, 0, 0); /*desplaza todos los elementos a la derecha*/
+}
+.carousel__container:hover .carousel-item {
+    opacity: 0.3;
+}
+.carousel__container:hover .carousel-item:hover {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+.carousel-item__img {
+    height: 250px;
+    object-fit: cover; /*Conserva la proporcion original de la imagen*/
+    width: 200px;
+}
+.carousel-item__details {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    justify-content: flex-end;
+    opacity: 0;
+    padding: 10px;
+    position: absolute;
+    transition: 450ms opacity;
+}
+.carousel-item__details img {
+    margin-bottom: 4px;
+    width: 20px;
+}
+.carousel-item__details--title {
+    font-size: 11px;
+    font-weight: bold;
+    margin: 2px;
+}
+.carousel-item__details--subtitle {
+    font-size: 9px;
+    margin: 2px;
+}
+.carousel-item__details:hover {
+    opacity: 1;
+}

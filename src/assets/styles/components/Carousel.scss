@@ -1,0 +1,12 @@
+.carousel {
+    box-sizing: border-box; /*integra al padding dentro del 100% del width*/
+    overflow: scroll;
+    padding: 0px 30px;
+    position: relative; /*todos los elementos dentro de este bloque se ubicaran en relacion a el*/
+    width: 100%;
+}
+.carousel__container {
+    margin: 70px 0px; /*espacio donde crece la imagen al hacer hover*/
+    white-space: nowrap; /*los elementos se ubican en una sola fila que se extendera por mas
+    que se acabe la pantalla para lo que sera util el scroll*/
+}
