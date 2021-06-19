@@ -1,6 +1,9 @@
+@import "./Vars.scss";
+@import "./Media.scss";
+
 body {
     color: white;
-    font-family: 'Mulish', sans-serif;
+    font-family: $theme-font;
     margin: 0;
-    background-color: #8F57FD;
+    background-color: $main-color;
 }
