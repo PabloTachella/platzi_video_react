@@ -5,36 +5,35 @@ import Categories from '../components/Catergories'
 import Carousel from '../components/Carousel'
 import CarouselItem from '../components/CarouselItem'
 import Footer from '../components/Footer'
+import useInitialState from '../hooks/useInitialState'
 
 import '../assets/styles/App.scss'
 
+const API = 'http://localhost:3000/initialState'
+
 const App = () => {
-    const [ videos, setVideos ] = useState([])
+    const initialState = useInitialState(API)
 
-    useEffect(() => {
-        fetch('http://localhost:3000/initialState')
-            .then(response => response.json())
-            .then(data => setVideos(data))
-    }, [] )
+    console.log(initialState)
 
-    console.log(videos)
-
-    return(
+    return initialState.length === 0 ? <h1>...Loading</h1> : (
         <div className="App">
             <Header />
             <Search />
 
-            {videos.mylist?.lenght > 0 &&  //solo si mi lista es mayor a 0 renderiza esta seccion
+            {initialState.mylist.lenght > 0 &&  //solo si mi lista es mayor a 0 renderiza esta seccion
                 <Categories title="Mi Lista">
                     <Carousel>
-                        <CarouselItem />
+                        {initialState.mylist.map(item => 
+                            <CarouselItem key={item.id} {...item} />
+                        )}
                     </Carousel>
                 </Categories>
             }
 
             <Categories title="Tendencias">
                 <Carousel>
-                    {videos.trends?.map(item =>
+                    {initialState.trends.map(item =>
                         <CarouselItem key={item.id} {...item} /> //al renderizado de carouselItem le paso el id del item y luego todos elementos que tiene item
                     )}
                 </Carousel>
@@ -42,7 +41,9 @@ const App = () => {
 
             <Categories title="Originales de Platzi Video">
                 <Carousel>
-                    <CarouselItem />
+                    {initialState.originals.map(item => 
+                        <CarouselItem key={item.id} {...item} />
+                        )}
                 </Carousel>
             </Categories>
 
