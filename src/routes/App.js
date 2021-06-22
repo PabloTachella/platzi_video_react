@@ -4,7 +4,7 @@ import Home from '../containers/Home'
 import Login from '../containers/Login'
 import NotFound from '../containers/NotFound'
 import Register from '../containers/Register'
-import Layout from '../containers/Layout'
+import Layout from '../components/Layout'
 
 const App = () => (
     <BrowserRouter>
@@ -15,7 +15,7 @@ const App = () => (
                 <Route exact path="/register" component={Register} />
                 <Route component={NotFound} />
             </Switch>
-    </Layout>
+        </Layout>
     </BrowserRouter>
 )
 
