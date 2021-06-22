@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import Header from '../components/Header'
 import Search from '../components/Search'
 import Categories from '../components/Catergories'
 import Carousel from '../components/Carousel'
 import CarouselItem from '../components/CarouselItem'
-import Footer from '../components/Footer'
 import useInitialState from '../hooks/useInitialState'
 
 import '../assets/styles/App.scss'
@@ -17,8 +15,7 @@ const Home = () => {
     console.log(initialState)
 
     return initialState.length === 0 ? <h1>...Loading</h1> : (
-        <div className="App">
-            <Header />
+        <> 
             <Search />
 
             {initialState.mylist.lenght > 0 &&  //solo si mi lista es mayor a 0 renderiza esta seccion
@@ -46,9 +43,7 @@ const Home = () => {
                         )}
                 </Carousel>
             </Categories>
-
-            <Footer />
-        </div>
+        </>
     )
 }
 
