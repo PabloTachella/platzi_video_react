@@ -1,0 +1,108 @@
+
+/* Sector principal de paginas login y register */
+.login, .register {
+    align-items: center;
+    display: flex;
+    flex-direction: column; /*alinea los elementos de arriba hacia abajo*/
+    padding: 0px 30px; /*este padding es útil en mobile,en escritorio no influye*/
+    /*Aún no encuentro oportunidad en la que el height de estos
+    bloques vaya a ser menor incluso del VH, quedará comentada por el momento
+    min-height: calc(100vh - 200px); el minimo del alto de login sera de vh o view height menos 200px*/
+}
+.sesion__main {
+    background: linear-gradient(#21c08b, #ab88ff);
+}
+.login__container, .register__container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 700px;
+    padding: 60px 68px 40px;
+    width: 300px;
+}
+.login__container--form, .register__container--form {
+    display: flex;
+    flex-direction: column;
+}
+.login__container--form label {
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+}
+.login__container--remember-me {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.login__container--remember-me a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+.register__container a {
+    color: white;
+    display: flex;
+    font-size: 16px;
+    justify-content: center;
+    text-decoration: none;
+}
+.login__container--remember-me a:hover, .register__container a:hover {
+    text-decoration: underline;
+}
+.login__container--social-media > div{
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.login__container--social-media > div > img{
+    margin-right: 10px;
+    width: 30px;
+}
+.login__container--register {
+    font-size: 14px;
+
+}
+.login__container--register a {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.login__container--register a:hover {
+    text-decoration: underline;
+}
+.sesion__input{
+    background-color: transparent;
+    border-bottom: 2px solid white;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    color: white;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    height: 50px;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 0px 20px;
+}
+::placeholder {
+    color: white;
+}
+.button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Mulish', sans-serif;
+    font-weight: bold;
+    height: 50px;
+    letter-spacing: 1px;
+    margin: 10px 0px;
+}
