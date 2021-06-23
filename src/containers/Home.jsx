@@ -12,8 +12,6 @@ const API = 'http://localhost:3000/initialState'
 const Home = () => {
     const initialState = useInitialState(API)
 
-    console.log(initialState)
-
     return initialState.length === 0 ? <h1>...Loading</h1> : (
         <> 
             <Search />
