@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { loginRequest } from '../actions'
 import googleIcon from '../assets/static/icon-google-plus.png'
 import twitterIcon from '../assets/static/icon-twitter.png'
 import '../assets/styles/components/LoginRegister.scss'
 
-const Login = () => {
+const Login = props => {
     const [form, setValues] = useState({
         email:'',
     })
@@ -17,10 +19,13 @@ const Login = () => {
     }
 
     const handleSubmit = event => {
-        //preventDefault evita el comportamiento por defecto en los imput 
-        //como por ejemplo enviar parametros por url al presionar enter
+        // preventDefault evita el comportamiento por defecto en los imput 
+        // como por ejemplo enviar parametros por url al presionar enter
         event.preventDefault()
-        console.log(form)
+        props.loginRequest(form)
+        // histoy se encuentra disponible porque estamos encapsulando nuestra app en
+        // el browserRouter y nos permite usar este metodo push para redireccionar la url
+        props.history.push('/')
     }
 
     return (
@@ -63,4 +68,8 @@ const Login = () => {
     )
 }
 
-export default Login
+const mapDispatchToProps = {
+    loginRequest,
+}
+
+export default connect(null, mapDispatchToProps)(Login)
