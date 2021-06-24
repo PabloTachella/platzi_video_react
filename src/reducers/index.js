@@ -2,9 +2,14 @@ const reducer = (state, action) => {
 
     switch (action.type) {
         case 'SET_FAVOURITE':
-            return {
-                ...state,
-                myList: [...state.myList, action.payload]
+            const isAdded = state.myList.some(item => item.id === action.payload.id)
+            if (!isAdded) {
+                return {
+                    ...state,
+                    myList: [...state.myList, action.payload]
+                }
+            } else {
+                return state
             }
         case 'DELETE_FAVOURITE':
             return {
