@@ -7,14 +7,14 @@ import CarouselItem from '../components/CarouselItem'
 
 import '../assets/styles/App.scss'
 
-const Home = ({ mylist, trends, originals }) => {
+const Home = ({ myList, trends, originals }) => {
     return (
         <> 
             <Search />
-            {mylist.lenght > 0 &&  //solo si mi lista es mayor a 0 renderiza esta seccion
+            {myList.length > 0 &&  //solo si mi lista es mayor a 0 renderiza esta seccion
                 <Categories title="Mi Lista">
                     <Carousel>
-                        {mylist.map(item => 
+                        {myList.map(item => 
                             <CarouselItem key={item.id} {...item} />
                         )}
                     </Carousel>
@@ -42,7 +42,7 @@ const Home = ({ mylist, trends, originals }) => {
 
 const mapStateToProps = state => {
     return {
-        mylist: state.mylist,
+        myList: state.myList,
         trends: state.trends,
         originals: state.originals
     }
