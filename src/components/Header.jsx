@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import gravatar from '../utils/gravatar'
 import { logoutRequest } from '../actions'
 import '../assets/styles/components/Header.scss'
@@ -34,7 +35,8 @@ const Header = props => {
                         : null
                     }
                     {hasUser ?
-                        <li><a href="#logout" onClick={handleLogout}>Cerrar Sesión</a></li> :
+                        <li><a href="#logout" onClick={handleLogout}>Cerrar Sesión</a></li>
+                        :
                         <li>
                             <Link to="/login">
                                 Iniciar Sesión
@@ -45,6 +47,11 @@ const Header = props => {
             </div>
         </header>
     )
+}
+
+Header.propTypes = {
+    user: PropTypes.object.isRequired,
+    logoutRequest: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => {

@@ -47,7 +47,7 @@ const Login = props => {
                         placeholder="Contraseña" 
                         onChange={handleInput}
                     />
-                    <button className="button">Iniciar Sesión</button>
+                    <button className="button" type="submit" >Iniciar Sesión</button>
                     <div className="login__container--remember-me">
                         <label>
                             <input type="checkbox" name="" id="cbox1" />Recuérdame

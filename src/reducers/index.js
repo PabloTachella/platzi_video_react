@@ -6,7 +6,7 @@ const reducer = (state, action) => {
             if (!isAdded) {
                 return {
                     ...state,
-                    myList: [...state.myList, action.payload]
+                    myList: [...state.myList, action.payload],
                 }
             } else {
                 return state
@@ -14,7 +14,7 @@ const reducer = (state, action) => {
         case 'DELETE_FAVOURITE':
             return {
                 ...state,
-                myList: state.myList.filter(item => item.id !== action.payload)
+                myList: state.myList.filter(item => item.id !== action.payload),
             }
         case 'LOGIN_REQUEST':
             return {
@@ -24,7 +24,12 @@ const reducer = (state, action) => {
         case 'LOGOUT_REQUEST':
             return {
                 ...state,
-                user: action.payload
+                user: action.payload,
+            }
+        case 'REGISTER_REQUEST':
+            return {
+                ...state,
+                user: action.payload,
             }
         default:
             return state
