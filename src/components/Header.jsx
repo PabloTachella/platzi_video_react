@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 import gravatar from '../utils/gravatar'
 import { logoutRequest } from '../actions'
 import '../assets/styles/components/Header.scss'
@@ -9,15 +10,20 @@ import logo from '../assets/static/logo-platzi-video.png'
 import userIcon from '../assets/static/user-icon.png'
 
 const Header = props => {
-    const { user } = props
+    const { user, isLogin, isRegister } = props
     // como user es un objeto no puedo aplicarle .length directamente, usando 
     // object.key(objeto) puedo saber cuantos elementos tiene un objeto
     const hasUser = Object.keys(user).length > 0
+
     const handleLogout = event => {
         props.logoutRequest({})
     }
+    const headerClass = classNames('header', {
+        isLogin,
+        isRegister
+    })
     return (
-        <header className="header">
+        <header className={headerClass}>
             <Link to="/">
                 <img className= "header__img" src={logo} alt="Logo Platzi logo-platzi-video"/>
             </Link>

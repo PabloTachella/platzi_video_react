@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
+import Header from '../components/Header'
 import Search from '../components/Search'
 import Categories from '../components/Catergories'
 import Carousel from '../components/Carousel'
@@ -10,6 +11,7 @@ import '../assets/styles/App.scss'
 const Home = ({ myList, trends, originals }) => {
     return (
         <> 
+            <Header />
             <Search />
             {myList.length > 0 &&  //solo si mi lista es mayor a 0 renderiza esta seccion
                 <Categories title="Mi Lista">
